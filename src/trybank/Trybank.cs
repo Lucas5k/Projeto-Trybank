@@ -4,7 +4,7 @@ public class Trybank
 {
     public bool Logged;
     public int loggedUser;
-    
+
     //0 -> Número da conta
     //1 -> Agência
     //2 -> Senha
@@ -22,22 +22,91 @@ public class Trybank
 
     public void RegisterAccount(int number, int agency, int pass)
     {
-        throw new NotImplementedException();
+        try
+        {
+            for (var i = 0; i < Bank.GetLength(registeredAccounts); i++)
+            {
+                if (Bank[i,i] == number && Bank[i,i] == agency)
+                {
+                    throw new ArgumentException("A conta já está sendo usada!");
+                }
+            }
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+
+        Bank[registeredAccounts, 0] = number;
+        Bank[registeredAccounts, 1] = agency;
+        Bank[registeredAccounts, 2] = pass;
+        Bank[registeredAccounts, 3] = 0;
+        registeredAccounts++;
     }
 
     public void Login(int number, int agency, int pass)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (Logged)
+            {
+                throw new AccessViolationException("Usuário já está logado");
+            }
+
+            for (var i = 0; i < Bank.GetLength(0); i++)
+            {
+                if (Bank[i,i] != number && Bank[i,i] != agency)
+                {
+                    throw new ArgumentException("Agência + Conta não encontrada");
+                }
+
+                if (Bank[i,i] != pass)
+                {
+                    throw new ArgumentException("Senha incorreta");
+                }
+
+                if (Bank[i,i] == number && Bank[i,i] == agency && Bank[i,i] == pass)
+                {
+                    Logged = true;
+                    loggedUser = Array.IndexOf(Bank, i);
+                }
+            }
+        }
+        catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
 
     public void Logout()
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (!Logged)
+            {
+                throw new AccessViolationException("Usuário não está logado");
+            }
+        }
+        catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+
+        Logged = false;
+        loggedUser = -99;
     }
 
     public int CheckBalance()
     {
-        throw new NotImplementedException();   
+        throw new NotImplementedException();
     }
 
     public void Transfer(int destinationNumber, int destinationAgency, int value)
