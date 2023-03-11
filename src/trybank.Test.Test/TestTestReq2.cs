@@ -2,11 +2,11 @@ using Xunit;
 using FluentAssertions;
 using System;
 
-
 namespace trybank.Test.Test;
 
 public class TestTestReq2
 {
+    [Trait("type", "unit")]
     [Trait("Category", "2 - A pessoa usuária deve conseguir fazer Login e Logout")]
     [Theory(DisplayName = "TestLoginSucess deve ser executado com sucesso com entradas corretas")]
     [InlineData(1234, 123, 1010)]

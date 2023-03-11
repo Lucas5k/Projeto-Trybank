@@ -61,7 +61,7 @@ public class Trybank
                     throw new ArgumentException("Agência + Conta não encontrada");
                 }
 
-                if (Bank[i,i] != pass)
+                if (Bank[i,i] == number && Bank[i,i] == agency && Bank[i,i] != pass)
                 {
                     throw new ArgumentException("Senha incorreta");
                 }
