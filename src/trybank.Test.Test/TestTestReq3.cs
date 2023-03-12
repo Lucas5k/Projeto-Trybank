@@ -6,7 +6,6 @@ namespace trybank.Test.Test;
 
 public class TestTestReq3
 {
-    [Trait("type", "unit")]
     [Trait("Category", "3 - O programa deve permitir checar o saldo, depositar e sacar dinheiro")]
     [Theory(DisplayName = "TestCheckBalanceSucess deve ser executado com sucesso com entradas corretas")]
     [InlineData(1010)]

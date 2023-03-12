@@ -130,7 +130,31 @@ public class Trybank
 
     public void Transfer(int destinationNumber, int destinationAgency, int value)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (!Logged) throw new AccessViolationException("Usuário já está logado");
+
+            for (var i = 0; i < Bank.GetLength(0); i++)
+            {
+                if (Bank[i, 3] <= 0)
+                {
+                    throw new InvalidOperationException("Saldo insuficiente");
+                }
+                Bank[i, i] = destinationNumber;
+                Bank[i, i] = destinationAgency;
+                Bank[i, i] = value;
+            }
+        }
+        catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
 
     public void Deposit(int value)
