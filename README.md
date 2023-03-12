@@ -16,10 +16,10 @@ e arrays multidimensionais para fazer o armazenamento dos dados do banco e manip
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
 ```
 - Clone o repositório
-git clone git@github.com:Lucas5k/Project-Guessing-Number.git
+git clone git@github.com:Lucas5k/Projeto-Trybank.git
 
 - Entre no arquivo do projeto
-cd Project-Guessing-Number
+cd Projeto-Trybank
 
 - Usar o projeto
 cd src/
