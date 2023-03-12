@@ -8,30 +8,30 @@ namespace trybank.Test;
 public class TestThirdReq
 {
     [Theory(DisplayName = "Deve devolver o saldo em uma conta logada")]
-    [InlineData(0)]
+    [InlineData(70)]
     public void TestCheckBalanceSucess(int balance)
-    {        
+    {
         throw new NotImplementedException();
     }
 
     [Theory(DisplayName = "Deve lançar uma exceção de usuário não logado")]
     [InlineData(0)]
     public void TestCheckBalanceWithoutLogin(int balance)
-    {        
+    {
         throw new NotImplementedException();
     }
 
     [Theory(DisplayName = "Deve depositar um saldo em uma conta logada")]
     [InlineData(0)]
     public void TestDepositSucess(int value)
-    {        
+    {
         throw new NotImplementedException();
     }
 
     [Theory(DisplayName = "Deve lançar uma exceção de usuário não logado")]
     [InlineData(0)]
     public void TestDepositWithoutLogin(int value)
-    {        
+    {
         throw new NotImplementedException();
     }
 

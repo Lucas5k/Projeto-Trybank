@@ -106,7 +106,26 @@ public class Trybank
 
     public int CheckBalance()
     {
-        throw new NotImplementedException();
+        int returnValue = 0;
+        try
+        {
+            if (!Logged) throw new AccessViolationException("Usuário não está logado");
+
+            for (var i = 0; i < Bank.GetLength(0); i++)
+            {
+                if (loggedUser == Bank[i, i])
+                {
+                    returnValue = Bank[i, i];
+                }
+            }
+        }
+        catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+
+        return returnValue;
     }
 
     public void Transfer(int destinationNumber, int destinationAgency, int value)
@@ -116,11 +135,41 @@ public class Trybank
 
     public void Deposit(int value)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (!Logged) throw new AccessViolationException("Usuário já está logado");
+
+            for (var i = 0; i < Bank.GetLength(0); i++)
+            {
+                Bank[i, 3] = value;
+            }
+        }
+        catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
 
     public void Withdraw(int value)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (!Logged) throw new AccessViolationException("Usuário já está logado");
+
+            for (var i = 0; i < Bank.GetLength(0); i++)
+            {
+                Bank[i, 3] = value;
+                if (Bank[i, 3] <= 0)
+                {
+                    throw new InvalidOperationException("Saldo insuficiente");
+                }
+            }
+        }
+        catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
 }
