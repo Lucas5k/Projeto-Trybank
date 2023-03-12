@@ -1,9 +1,8 @@
 # Projeto-Trybank
 
 ## :memo: Descrição
-<p>Todos os sistemas desta empresa têm filas longas e as pessoas clientes ficam entediadas enquanto esperam.
-proposta é uma solução de implementar um jogo para os clientes se divertirem enquanto esperam sua vez na fila. é um jogo de Adivinhar o Número!
-E no ambito de teste, usei o Xunit.</p>
+<p>O Trybank é um serviço de banco financeiro. Com objetivo de construir um banco que contenha contas. Além disso, deve criar e validar os processos de cadastro, login, saque, depósito e transferência do saldo dessas contas. Utilizei conjuntos de Try/Catch Capturando as possíveis exceções em código
+e arrays multidimensionais para fazer o armazenamento dos dados do banco e manipulá-los. E por fim usei o xunit para implementação dos testes!</p>
 
 ## :books: Funcionalidades
 <ol><b>Funcionalidade 1</b>: O jogador 1 escolhe um número aleatório.</ol>
