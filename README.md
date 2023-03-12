@@ -5,9 +5,13 @@
 e arrays multidimensionais para fazer o armazenamento dos dados do banco e manipulá-los. E por fim usei o xunit para implementação dos testes!</p>
 
 ## :books: Funcionalidades
-<ol><b>Funcionalidade 1</b>: O jogador 1 escolhe um número aleatório.</ol>
-<ol><b>Funcionalidade 2</b>: O jogador 2 tenta adivinhar esse número.</ol>
-<ol><b>Funcionalidade 3</b>: O jogador 1 responde se a tentativa do jogador 2 foi correta, abaixo ou acima do número escolhido.</ol>
+<ol><b>Funcionalidade 1</b>: A pessoa usuária pode Cadastrar uma nova conta.</ol>
+<ol><b>Funcionalidade 2</b>: A pessoa usuária pode fazer o Login na conta.</ol>
+<ol><b>Funcionalidade 3</b>: A pessoa usuária pode fazer Logout.</ol>
+<ol><b>Funcionalidade 4</b>: A pessoa usuária pode fazer a verificação do saldo.</ol>
+<ol><b>Funcionalidade 5</b>: A pessoa usuária pode fazer depósitos.</ol>
+<ol><b>Funcionalidade 6</b>: A pessoa usuária pode fazer saques.</ol>
+<ol><b>Funcionalidade 7</b>: A pessoa usuária pode fazer Transferências.</ol>
 
 ## <h3>:wrench: Tecnologias utilizadas</h3>
 * C# Sharp
