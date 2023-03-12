@@ -159,14 +159,19 @@ public class Trybank
 
             for (var i = 0; i < Bank.GetLength(0); i++)
             {
-                Bank[i, 3] = value;
                 if (Bank[i, 3] <= 0)
                 {
                     throw new InvalidOperationException("Saldo insuficiente");
                 }
+                Bank[i, 3] = value;
             }
         }
         catch (AccessViolationException ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+        catch (InvalidOperationException ex)
         {
             Console.WriteLine(ex.Message);
             throw;
