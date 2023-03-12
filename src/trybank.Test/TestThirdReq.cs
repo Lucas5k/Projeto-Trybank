@@ -86,7 +86,7 @@ public class TestThirdReq
         act.Should().Throw<AccessViolationException>().WithMessage("Usuário não está logado");
     }
 
-    [Theory(DisplayName = "Deve lançar uma exceção de usuário não logado")]
+    [Theory(DisplayName = "Deve lançar uma exceção quando o saldo da conta não é suficiente")]
     [InlineData(0, 0)]
     public void TestWithdrawWithoutBalance(int balance, int value)
     {
