@@ -28,7 +28,7 @@ cd Projeto-Trybank
 - Usar o projeto
 cd src/
 
-- Rodar os testes
+- Rodar os testes, somente no arquivo que contenha ao final .TEST
 dotnet test
 
 Use a vontade!
